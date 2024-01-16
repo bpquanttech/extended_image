@@ -10,6 +10,9 @@ mixin DragGestureRecognizerMixin on _DragGestureRecognizer {
     if (!canDrag) {
       return false;
     }
+    if (_velocityTrackers.keys.length >= 2) {
+      return false;
+    }
     if (_velocityTrackers.keys.length == 1) {
       return true;
     }
